@@ -1,0 +1,62 @@
+BACKEND API WITH API KEY AUTHENTICATION:
+
+Provides an api for adding contact information for database.
+
+Service endpoint: http://localhost:8080/
+
+To call this API, you will need key api and token. For this implementation the api key is: x-api-key and token is: ValidApiKey.
+API call return true or false, depending whether it was able to add JSON to database.
+
+Method:
+
+	POST - '/addContacts'
+	
+	Call receives JSON as a body. You can send contact information as a list or in singular form.
+	You should format your input like:
+	
+	A singular information:
+	
+	"
+		{
+			'Contacts': [
+				{
+					"FirstName": "FirstName",
+					"LastName": "LastName",
+					"Email": "Email@mail.com",
+					"PhoneNumber": "+000 000000"
+					"City": "City"
+				}
+			]
+		}
+	"
+	
+	Or as a list:
+	
+	"
+		{
+			'Contacts': [
+				{
+					"FirstName": "FirstName",
+					"LastName": "LastName",
+					"Email": "Email@mail.com",
+					"PhoneNumber": "+000 000000"
+					"City": "City"
+				},
+				{
+					"FirstName": "SecondFirstName",
+					"LastName": "SecondLastName",
+					"Email": "SecondEmail@mail.com",
+					"PhoneNumber": "+000 000000"
+					"City": "City"
+				}
+			]
+		}
+	"
+	
+	FirstName: Can take only letters.
+	LastName: Can take only letters.
+	Email: String should be valid and in email format.
+	PhoneNumber: Can take only numbers or +.
+	City: Can take only letters.
+	
+	API checks if contact information is already included to database, to prevent from adding duplicates.
