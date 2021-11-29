@@ -43,11 +43,10 @@ public class APIController {
 				boolean b = controller.save(new Contact(temp.getString("FirstName"), temp.getString("LastName"), temp.getString("Email"), temp.getString("PhoneNumber"), temp.getString("City")));
 				if(b == false) result = false;
 			}
-			return new ResponseEntity<Boolean>(result, HttpStatus.OK);
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		return new ResponseEntity<Boolean>(false, HttpStatus.OK);
+		return new ResponseEntity<Boolean>(result, HttpStatus.OK);
 	}
 	
 	@GetMapping("/order")
