@@ -43,7 +43,7 @@ public class ContactDatabase {
 			String query = "insert into contacts(FirstName, LastName, Email, PhoneNumber, City) values ('" + c.getFirstName() + "','" + c.getLastName() + "','" + c.getEmail() + "','" + c.getPhoneNro() + "','" + c.getCity() + "');";
 			boolean result = stm.execute(query);
 			
-			return result;
+			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
